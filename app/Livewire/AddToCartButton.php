@@ -35,6 +35,7 @@ class AddToCartButton extends Component
 
             // 🔁 Actualizar contador
             $this->dispatch('cartUpdated');
+            $this->dispatch('cartUpdated');
         }
 
 

@@ -16,7 +16,7 @@ class ImageFactory extends Factory
      */
     public function definition(): array
     {
-        $fileName = $this->faker->numberBetween(1,54) . '.jpg';
+        $fileName = $this->faker->numberBetween(1,59) . '.jpg';
         return [
             'path'=> "img/products/{$fileName}",
         ];

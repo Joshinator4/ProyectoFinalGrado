@@ -13,8 +13,8 @@
         @foreach($products as $p)
             <tr>
                 <td>
-                    <img src="{{ asset($p->images->first()->path) }}"
-                         style="width:80px;margin-right:8px;">
+                <img src="{{ asset($p->images->first()->path) }}"
+                    style="width: 100px; height: 140px; object-fit: cover; border-radius: 6px; margin-right: 8px;">
                     {{ $p->title }}
                 </td>
                 <td>€{{ number_format($p->price, 2) }}</td>

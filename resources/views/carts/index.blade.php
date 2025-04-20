@@ -18,9 +18,11 @@
             <!-- <strong>Grand Total: {{ $cart->total }}€</strong> -->
             @livewire('cart-total')
         </h4>
-        <a class="btn btn-success mb-3" href="{{ route('orders.create') }}">
-            Start Order
-        </a>
+        <div class="text-center">
+            <a class="btn btn-success mb-3 btn-lg" href="{{ route('orders.create') }}">
+                Start Order
+            </a>
+        </div>
         <div class="row">
             @foreach ($cart->products as $product)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">

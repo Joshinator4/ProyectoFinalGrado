@@ -17,66 +17,183 @@
 
     <!-- Custom pastel style -->
     <style>
-        html, body {
+    html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-        background-color: #b3e5fc; /* Azul pastel */
-        font-family: 'Nunito', sans-serif;
-        }
-        #app {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+        background: linear-gradient(135deg, #e8eaf6, #b3e5fc); /* Degradado morado y azul pastel */
 
-        main {
-            flex: 1;
-        }
-
-        .navbar {
-            background-color: #c8e6c9; /* pastel azul */
-        }
-
-        .navbar-brand, .nav-link, .dropdown-item {
-            color: #004d40 !important; /* verde oscuro para contraste */
-        }
-
-        .nav-link:hover, .dropdown-item:hover {
-            background-color: #b2dfdb !important; /* pastel verde agua claro */
-        }
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        color: #ffffff; /* Blanco para texto que contrasta bien con el azul */
+    }
 
 
-        .btn-success:hover {
-            background-color: #9ccc65 !important;
-        }
 
-        .alert-success {
-            background-color: #dcedc8;
-            color: #33691e;
-            border-color: #c5e1a5;
-        }
+    #app {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-        .alert-danger {
-            background-color: #ffecb3;
-            color: #bf360c;
-            border-color: #ffe082;
-        }
+    main {
+    background: linear-gradient(135deg, #e8eaf6, #b3e5fc); /* Degradado morado y azul pastel */
+    padding: 2rem;
+    /* border-radius: 16px; */
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); */
+}
 
-        .dropdown-menu {
-            background-color: #fffde7; /* pastel amarillo claro */
-        }
 
-        main {
-            background-color: #e3f2fd; /* pastel azul clarito */
-            padding: 2rem;
-            border-radius: 12px;
-        }
 
-        img.rounded-circle {
-            border: 2px solid #80deea;
-        }
-    </style>
+    .navbar {
+        background: linear-gradient(90deg, #6a1b9a, #1976d2, #2e7d32);
+        padding: 0.8rem 1.5rem;
+        color: #ffffff;
+    }
+
+    .navbar-brand, .nav-link {
+        color: #ffffff !important;
+        font-weight: 600;
+    }
+    .dropdown-item{
+        color:rgb(0, 182, 55);
+    }
+
+    .nav-link:hover, .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px;
+    }
+
+    .btn-success {
+        background: linear-gradient(to right, #2e7d32, #66bb6a);
+        border: none;
+        font-weight: 600;
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-success:hover {
+        filter: brightness(1.1);
+    }
+
+    .btn-primary {
+        background: linear-gradient(to right, #6a1b9a, #8e24aa);
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .btn-primary:hover {
+        filter: brightness(1.1);
+    }
+    .btn-warning {
+        background: linear-gradient(to right, #f9a825, #fdd835); /* amarillo dorado a claro */
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+        transition: filter 0.2s ease-in-out;
+    }
+
+    .btn-warning:hover {
+        filter: brightness(1.1);
+    }
+
+    .btn-danger {
+        background: linear-gradient(to right, #c62828, #ef5350); /* rojo oscuro a coral */
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+        transition: filter 0.2s ease-in-out;
+    }
+
+    .btn-danger:hover {
+        filter: brightness(1.1);
+    }
+
+    .btn-secondary {
+        background: linear-gradient(to right, #455a64, #90a4ae); /* gris azulado oscuro a claro */
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+        transition: filter 0.2s ease-in-out;
+    }
+
+    .btn-secondary:hover {
+        filter: brightness(1.1);
+    }
+
+
+    .alert-success {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+        border-left: 5px solid #66bb6a;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .alert-danger {
+        background-color: #fce4ec;
+        color: #ad1457;
+        border-left: 5px solid #f06292;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .dropdown-menu {
+        background-color:rgb(51, 0, 59);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    img.rounded-circle {
+        border: 3px solid #8e24aa;
+    }
+
+
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    .form-control {
+        background-color: #fdfdfd;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #7e57c2;
+        box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
+        outline: none;
+    }
+
+    footer {
+        background-color: #eeeeee;
+        padding: 1rem;
+        text-align: center;
+        color: #6c757d;
+        border-top: 1px solid #dcdcdc;
+        margin-top: auto;
+    }
+</style>
+
+
+
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

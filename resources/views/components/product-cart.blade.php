@@ -45,7 +45,7 @@
             </form> -->
             @livewire('cart-item-manager', ['product' => $product], key($product->id))
         @else {{--?Si no estamos en el carrito se muestra otro tipo de formulario --}}
-            <div class="d-flex justify-content-between w-100">
+            <!-- <div class="d-flex justify-content-between"> -->
                 <!-- <form class="form-inline"
                 method="POST"
                 action="{{ route('products.carts.store', ['product' => $product->id]) }}"
@@ -53,14 +53,12 @@
                     @csrf
                     <button type="submit" class="btn btn-success">Add to Cart</button>
                 </form> -->
-                @livewire('add-to-cart-button', ['product' => $product])
 
-                @if (Route::currentRouteName() !== 'products.show')
-                    <a class="btn btn-primary" href="{{ route('products.show', ['product' => $product->id]) }}">Show Product</a>
-                @else
-                    <a class="btn btn-secondary" href="{{ url()->previous() }}">Go Back</a>
-                @endif
-            </div>
+                <!-- @livewire('add-to-cart-button', ['product' => $product]) -->
+                
+                @livewire('product-cart-toggle', ['product' => $product], key('toggle-' . $product->id))
+
+            <!-- </div> -->
         @endif
 
 

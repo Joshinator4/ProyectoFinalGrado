@@ -18,7 +18,6 @@ class CartItemManager extends Component
         $cart = app(CartService::class)->getFromCookieOrCreate();
         $this->quantity = $cart->products()->find($this->product->id)?->pivot?->quantity ?? 0;
         $this->total = $this->product->total ?? ($product->price * $this->quantity);
-       
     }
 
     public function add()

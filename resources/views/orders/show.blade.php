@@ -14,14 +14,14 @@
                     >
                     @csrf
                     <input type="hidden" name="order_id" value="{{ $order->id }}">
-                    <button type="submit" class="btn btn-success">Confirm Order</button>
+                    <button type="submit" class="btn btn-success btn-lg">Confirm Order</button>
                 </form>
                 
             </div>
         @else
             <div class="text-center mb-3">        
                 <a href="{{ route('orders.download', $order) }}"
-                                        class="btn btn-warning">
+                                        class="btn btn-warning btn-lg">
                                         Download PDF
                                     </a>
             </div>   
@@ -48,7 +48,7 @@
                     <tr>
                         <td>
                             {{-- Puedes usar un placeholder para la imagen o un campo si la relación está definida --}}
-                            <img src="{{ $detail->product->images->isNotEmpty() ? asset($detail->product->images->first()->path) : asset('placeholder.jpg') }}" style="width: 100px" alt="{{ $detail->product->title }}">
+                            <img src="{{ $detail->product->images->isNotEmpty() ? asset($detail->product->images->first()->path) : asset('placeholder.jpg') }}" style="width: 100px; height: 140px;" alt="{{ $detail->product->title }}">
                             {{ $detail->product->title }}
                         </td>
                         <td>{{ $detail->product->price }}€</td>
