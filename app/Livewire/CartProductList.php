@@ -10,6 +10,8 @@ class CartProductList extends Component
 {
     public $products;  // colección con cada producto + quantity + subtotal
     public float $total = 0; // total de toda la tabla
+    protected $listeners = ['refreshCart' => '$refresh'];
+
 
     public function mount()
     {
@@ -86,6 +88,7 @@ class CartProductList extends Component
 
         $this->mount();
         $this->dispatch('cartUpdated');
+        $this->dispatch('product-removed');
     }
 
     public function render()

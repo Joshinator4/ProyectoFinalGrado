@@ -43,7 +43,10 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-warning">Remove Product</button>
             </form> -->
-            @livewire('cart-item-manager', ['product' => $product], key($product->id))
+            @livewire('cart-item-manager', ['product' => $product, 'route' => url()->current()], key($product->id))
+            <a class="btn btn-primary mt-1" href="{{ route('products.show', ['product' => $product->id]) }}">
+                                Show Product
+                            </a>
         @else {{--?Si no estamos en el carrito se muestra otro tipo de formulario --}}
             <!-- <div class="d-flex justify-content-between"> -->
                 <!-- <form class="form-inline"
@@ -55,21 +58,18 @@
                 </form> -->
 
                 <!-- @livewire('add-to-cart-button', ['product' => $product]) -->
-                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
-                    @livewire('product-cart-toggle', ['product' => $product], key('toggle-' . $product->id))
-                    {{-- Zona derecha: Botón Show Product / Go Back --}}
-                    <div class="d-flex align-items-center gap-3">
+                @livewire('product-cart-toggle', ['product' => $product], key('toggle-' . $product->id))
+                <div class="d-flex align-items-center gap-3 mt-1">
                         @if (Route::currentRouteName() !== 'products.show')
-                            <a class="btn btn-primary" href="{{ route('products.show', ['product' => $product->id]) }}">
+                            <a class="btn btn-primary w-100" href="{{ route('products.show', ['product' => $product->id]) }}">
                                 Show Product
                             </a>
                         @else
-                            <a class="btn btn-secondary" href="{{ url()->previous() }}">
+                            <a class="btn btn-secondary w-100" href="{{ url()->previous() }}">
                                 Go Back
                             </a>
                         @endif
                     </div>
-                </div>
             <!-- </div> -->
         @endif
 
@@ -82,7 +82,7 @@
 <p>stock: {{ $product->stock }}</p>
 <p>status: {{ $product->status }}</p> --}}
 <script>
-    Livewire.on('product-removed', () => {
+    Livewire.on('reload', () => {
         location.reload();
     });
 </script>

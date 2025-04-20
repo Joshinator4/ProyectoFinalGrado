@@ -9,8 +9,10 @@ use App\Services\CartService;
 class CartItemManager extends Component
 {
     public Product $product;
+    public string $route;
     public int $quantity = 0;
     public float $total;
+    protected $listeners = ['refreshCart' => '$refresh'];
 
     public function mount(Product $product)
     {
@@ -59,6 +61,9 @@ class CartItemManager extends Component
 
         // Disparamos el evento de eliminación
         $this->dispatch('product-removed', $this->product->id);
+        if ($this->route === 'https://marketeasy.duckdns.org/carts') {
+            $this->dispatch('reload');
+        }
     } else {
         // Si la cantidad es mayor que 0, actualizamos la cantidad
         $cart->products()->syncWithoutDetaching([
@@ -85,9 +90,11 @@ class CartItemManager extends Component
         cookie()->queue(app(CartService::class)->makeCookie($cart));
 
         // Disparar evento para actualizar vista
-        $this->dispatch('product-removed', $this->product->id);
+        $this->dispatch('product-removed');
         $this->dispatch('cartUpdated');
-        
+        if ($this->route === 'https://marketeasy.duckdns.org/carts') {
+            $this->dispatch('reload');
+        }
     }
 
     public function render()

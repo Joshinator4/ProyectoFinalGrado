@@ -22,7 +22,6 @@
         margin: 0;
         padding: 0;
         background: linear-gradient(135deg, #e8eaf6, #b3e5fc); /* Degradado morado y azul pastel */
-
         font-family: 'Inter', 'Segoe UI', sans-serif;
         color: #ffffff; /* Blanco para texto que contrasta bien con el azul */
     }
@@ -208,6 +207,11 @@
             icon: 'error',
             title: 'Oops...',
             text: message,
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        Livewire.on('product-removed', () => {
+            Livewire.emit('refreshCart');
         });
     });
 </script>

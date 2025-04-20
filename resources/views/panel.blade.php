@@ -10,11 +10,11 @@
                 <div class="card-body">
 
                     <div class="list-group">
-                        <a href="{{ route('products.index') }}" class="list-group-item">Manage Products</a>
+                        <a href="{{ route('products.index') }}" class="list-group-item btn-primary mb-1" style="color: white">Manage Products</a>
 
                     </div>
                     <div class="list-group">
-                        <a href="{{ route('users.index') }}" class="list-group-item">Manage Users</a>
+                        <a href="{{ route('users.index') }}" class="list-group-item btn-warning">Manage Users</a>
 
                     </div>
 
