@@ -16,7 +16,7 @@
         action="{{ route('orders.store') }}"
         >
             @csrf
-            <button type="submit" class="btn btn-success btn-lg">Confirm Order</button>
+            <button type="submit" class="btn btn-success w-100 btn-lg">Confirm Order</button>
         </form>
     </div>
     @livewire('cart-product-list')

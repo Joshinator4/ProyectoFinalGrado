@@ -19,7 +19,7 @@
             @livewire('cart-total')
         </h4>
         <div class="text-center">
-            <a class="btn btn-success mb-3 btn-lg" href="{{ route('orders.create') }}">
+            <a class="btn btn-success mb-3 w-100 btn-lg" href="{{ route('orders.create') }}">
                 Start Order
             </a>
         </div>

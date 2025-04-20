@@ -7,7 +7,7 @@
 
     <!-- Se añaden links para que sea mas sencillo acceder a las rutas-->
     <!-- añadiendo una ruta en el href se llama a las rutas con su respectivo llamado a los métodos del controlador -->
-    <a class="btn btn-success mb-3" href="{{route('products.create')}}">Create Product</a>
+    <a class="btn btn-success w-100 btn-lg mb-3" href="{{route('products.create')}}">Create Product</a>
 
     <!-- Formulario de búsqueda -->
     <form method="GET" action="{{ route('products.index') }}">
