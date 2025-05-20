@@ -182,17 +182,19 @@
 
     footer {
         background-color: #eeeeee;
-        padding: 1rem;
+        padding: 0.4rem 1rem; /* más compacto */
         text-align: center;
         color: #6c757d;
         border-top: 1px solid #dcdcdc;
         margin-top: auto;
+        font-size: 0.85rem;
+    }
+
+    footer p {
+        margin: 0;
+        white-space: nowrap; /* evita salto de línea automático */
     }
 </style>
-
-
-
-
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -317,6 +319,13 @@
                 @yield('content')
             </div>
         </main>
+        <footer>
+            <div class="container-fluid text-center">
+                <p>&copy; {{ now()->year }} IES Playamar. All rights reserved.</p>
+                <p>Developed by Joshua Sangareau Quesada 2ºDAM</p>
+            </div>
+        </footer>
+
     </div>
     
 </body>
